@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/cofbg"
+    tools:context="com.example.sathv.coffeeapp.OrderForm">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:id="@+id/orderlist" >
+
+    </ListView>
+
+    <Button
+        android:id="@+id/neworder"
+        style="@android:style/Widget.DeviceDefault.Light.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/orderlist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorAccent"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Start new order"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/none"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/neworder"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="No orders placed"
+        android:textColor="@color/white"
+        android:visibility="invisible" />
+</RelativeLayout>

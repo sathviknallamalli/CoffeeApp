@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+
+    <string-array name="milktypes">
+        <item>Almond</item>
+        <item>Coconut</item>
+        <item>Condensed Milk</item>
+        <item>Milk</item>
+    </string-array>
+
+    <string-array name="coffeetype">
+        <item>Cappuccino</item>
+        <item>Cafe mocha</item>
+        <item>Latte</item>
+        <item>Cafe macchiato</item>
+        <item>Espresso</item>
+    </string-array>
+
+    <string-array name="sizetype">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Grande</item>
+    </string-array>
+
+    <string-array name="spicetype">
+        <item>No spice</item>
+        <item>Cinnamon</item>
+        <item>All-spice</item>
+        <item>Nutmeg</item>
+        <item>Cayenne</item>
+        <item>Cloves</item>
+        <item>Star anise</item>
+    </string-array>
+
+    <string-array name="syruptype">
+        <item>No syrup</item>
+        <item>Vanilla</item>
+        <item>Hazelnut</item>
+        <item>Caramel</item>
+        <item>Chocolate</item>
+        <item>Strawberry</item>
+    </string-array>
+
+    <string-array name="icetype">
+        <item>No icecream</item>
+        <item>Vanilla</item>
+        <item>Peppermint</item>
+        <item>Affogato</item>
+        <item>Coffee</item>
+    </string-array>
+
+    <string-array name="whiptype">
+        <item>No whipped cream</item>
+        <item>Whipped cream</item>
+    </string-array>
+</resources>

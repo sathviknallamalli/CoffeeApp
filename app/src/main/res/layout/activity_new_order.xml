@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sathv.coffeeapp.NewOrder">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="14dp"
+            android:text="Each coffee type has a base price. Each additional add-on to milk type and syrup type, it is an extra $1.00. Syrup, milk, size, quantity, and name is required to confirm order"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="14dp"
+            android:text="Name of Orderer" />
+
+        <EditText
+            android:id="@+id/nameet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView"
+            android:layout_below="@+id/textView"
+            android:layout_marginStart="7dp"
+            android:hint="Name"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/nameet"
+            android:layout_below="@+id/nameet"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="26dp"
+            android:text="Type of Coffee" />
+
+        <Spinner
+            android:id="@+id/typespinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginStart="7dp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/nameet"
+            android:layout_below="@+id/nameet"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="26dp"
+            android:text="Size" />
+
+        <Spinner
+            android:id="@+id/sizespinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView2"
+            android:layout_below="@+id/textView2"
+            android:layout_marginStart="7dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/typespinner"
+            android:layout_below="@+id/typespinner"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="26dp"
+            android:text="Quantity" />
+
+        <EditText
+            android:id="@+id/quantityet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_below="@+id/textView3"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            android:hint="Quantity"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/quantityet"
+            android:layout_below="@+id/quantityet"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="26dp"
+            android:text="Add-ons" />
+
+        <Spinner
+            android:id="@+id/milk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_below="@+id/textView4"
+            android:layout_marginStart="7dp" />
+
+        <Spinner
+            android:id="@+id/spices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/milk"
+            android:layout_below="@+id/milk"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp" />
+
+        <Spinner
+            android:id="@+id/syrup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/spices"
+            android:layout_below="@+id/spices"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp" />
+
+        <Spinner
+            android:id="@+id/icecream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/syrup"
+            android:layout_below="@+id/syrup"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp" />
+
+        <Spinner
+            android:id="@+id/whip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/icecream"
+            android:layout_below="@+id/icecream"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/whip"
+            android:layout_below="@+id/whip"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="12dp"
+            android:text="Final Price" />
+
+        <EditText
+            android:id="@+id/price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView5"
+            android:layout_below="@+id/textView5"
+            android:layout_marginStart="7dp"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Price"
+            android:inputType="number" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/calculate"
+                style="@android:style/Widget.DeviceDefault.Light.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/price"
+                android:onClick="pricecalc"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Calculate price"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/confirm"
+                style="@android:style/Widget.DeviceDefault.Light.Button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/price"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="Complete order"
+                android:textAppearance="@style/TextAppearance.AppCompat"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
