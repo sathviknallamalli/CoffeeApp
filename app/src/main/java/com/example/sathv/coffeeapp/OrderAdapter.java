@@ -56,7 +56,7 @@ public class OrderAdapter extends ArrayAdapter<Order> {
 
         //set the appropriate fields with the appropriate info
         title.setText("Type: " + checkedBook.generalname);
-        price.setText("Price: $" + checkedBook.price);
+        price.setText("Price: " + checkedBook.price);
         addons.setText("Addons: " + checkedBook.addons);
         nameonorder.setText("Orderer name: " + checkedBook.nameonorder);
         quantity.setText("Quantity: " + checkedBook.quantity);

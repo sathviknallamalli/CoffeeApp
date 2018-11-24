@@ -10,12 +10,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class NewOrder extends AppCompatActivity {
-    EditText name, quantity, pr;
+    EditText name;
+    TextView pr;
 
     static ArrayList<Order> allos = new ArrayList<>();
 
@@ -27,13 +29,14 @@ public class NewOrder extends AppCompatActivity {
     Spinner icespin;
     Spinner whipspin;
     Spinner sizespin;
+    Spinner quantityspin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_order);
 
-        ArrayAdapter<CharSequence> adapter, cadapter, sadapter, syadapter, iadapter, wadapter, siadapter;
+        ArrayAdapter<CharSequence> adapter, cadapter, sadapter, syadapter, iadapter, wadapter, siadapter, qadapter;
 
         milkspin = findViewById(R.id.milk);
         coffeespin = findViewById(R.id.typespinner);
@@ -45,7 +48,7 @@ public class NewOrder extends AppCompatActivity {
         calculate = findViewById(R.id.calculate);
 
         name = findViewById(R.id.nameet);
-        quantity = findViewById(R.id.quantityet);
+        quantityspin = findViewById(R.id.quantityspin);
         pr = findViewById(R.id.price);
 
         name.setInputType(InputType.TYPE_TEXT_FLAG_CAP_WORDS);
@@ -171,6 +174,23 @@ public class NewOrder extends AppCompatActivity {
         });
         sizespin.setSelection(0);
 
+        qadapter = ArrayAdapter.createFromResource(this, R.array.quantity, android.R.layout.simple_spinner_item);
+        qadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        quantityspin.setAdapter(qadapter);
+        quantityspin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+                //parent.getItemAtPosition(position)
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+
+        });
+        quantityspin.setSelection(0);
+
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,12 +198,12 @@ public class NewOrder extends AppCompatActivity {
 
                 pricecalc(view);
 
-                if (quantity.getText().toString().isEmpty() || name.getText().toString().isEmpty() || syrupspin.getSelectedItemPosition() == 0) {
+                if (quantityspin.getSelectedItemPosition() == 0 || name.getText().toString().isEmpty() || syrupspin.getSelectedItemPosition() == 0) {
                     Toast.makeText(NewOrder.this, "Cant confirm order, missing info", Toast.LENGTH_LONG).show();
                 } else {
                     String n = name.getText().toString();
                     String ct = coffeespin.getSelectedItem().toString();
-                    String q = quantity.getText().toString();
+                    String q = quantityspin.getSelectedItem().toString();
                     String mad = milkspin.getSelectedItem().toString();
                     String spad = spicespin.getSelectedItem().toString();
                     String syad = syrupspin.getSelectedItem().toString();
@@ -209,8 +229,11 @@ public class NewOrder extends AppCompatActivity {
     }
 
     public void pricecalc(View v) {
-        if (quantity.getText().toString().isEmpty()) {
+        if (quantityspin.getSelectedItemPosition() == 0) {
             Toast.makeText(NewOrder.this, "No quantity specified", Toast.LENGTH_SHORT).show();
+            pr.setText("Error");
+        } else if (syrupspin.getSelectedItemPosition() == 0) {
+            Toast.makeText(NewOrder.this, "No syrup specified", Toast.LENGTH_SHORT).show();
             pr.setText("Error");
         } else {
             double prices[] = {1.5, 2, 1, 2.5, 2.3};
@@ -219,7 +242,7 @@ public class NewOrder extends AppCompatActivity {
 
 
             double sizescal = (sizespin.getSelectedItemPosition() * (.5)) + 1;
-            double quantscal = Integer.parseInt(quantity.getText().toString());
+            double quantscal = Integer.parseInt(quantityspin.getSelectedItem().toString());
 
 
             if (spicespin.getSelectedItemPosition() != 0) {
@@ -233,7 +256,7 @@ public class NewOrder extends AppCompatActivity {
             }
 
             double finorderprice = cofprice * sizescal * quantscal;
-            pr.setText(finorderprice + "");
+            pr.setText("$" + finorderprice + "");
         }
 
     }
